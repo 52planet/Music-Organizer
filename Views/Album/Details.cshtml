@@ -1,0 +1,75 @@
+﻿@model F2021A5LB.Models.AlbumWithDetailViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Album Details</h2>
+
+<div>
+    <h4>Album Info</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrlAlbum)
+        </dt>
+
+        <dd>
+
+            <img src=@Html.DisplayFor(model => model.UrlAlbum) width="100" height="100">
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tracks)
+        </dt>
+
+        <dd>
+          
+            @{
+                var num1 = Model.Tracks.Count();
+                <p>@num1</p>
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Artists)
+        </dt>
+
+        <dd>
+           
+            @{
+                var num = Model.Artists.Count();
+                <p>@num</p>
+            }
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Add Track", "AddTrack", "Track", new { id = Model.Id }, null) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

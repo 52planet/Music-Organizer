@@ -1,0 +1,68 @@
+﻿@model F2021A5LB.Models.TrackWithDetailViewModel
+
+<div>
+    <h4>Track Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Clerk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clerk)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Composers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Composers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Albums)
+        </dt>
+
+        <dd>
+            @{
+                var num1 = Model.Albums.Count();
+                <p>@num1</p>
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlbumNames)
+        </dt>
+
+        <dd>
+            @{
+                foreach (var item in Model.AlbumNames)
+                {
+                    <p>@item</p>
+                }
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("Back to List", "Index")
+</p>
